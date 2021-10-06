@@ -14,7 +14,11 @@
   height: 0;
 }
 
-#heroResult {
+#sensorFeedHeroResult {
+  visibility: hidden;
+}
+
+#bodyLenghtHeroResult {
   visibility: hidden;
 }
 
