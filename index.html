@@ -78,9 +78,70 @@
             </div>
           </div>
       </div>
-      <section class="hero is-success is-small" id="heroResult">
+      <section class="hero is-success is-small" id="sensorFeedHeroResult">
         <div class="hero-body">
           <p class="title" id="sensorFeedResult">
+          </p>
+          <p class="subtitle" id="entireResult">
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!--Lenght body box -->
+    <div class="column" id="feedCalcul">
+      <div class="box">
+        <section class="section">
+            <h2 class="title">
+                Longueur d'enroulement
+            </h2>
+            <p class="subtitle">
+                Calculer la longueur d'enroulement d'un ressort.
+            </p>
+        </section>
+        
+        <!--Forms for calculation-->
+        <label class="label">Diamètre moyen du ressort:</label>
+        <div class="field has-addons has-addons-fullwidth">
+          <p class="control">
+            <input class="input wireDiam" type="number" placeholder="Diamètre moyen" step=
+            0.01 id="bodyLenghtSpringDiam">
+          </p>
+          <p class="control">
+            <a class="button is-static">mm</a>
+          </p>
+        </div>
+        
+        <label class="label">Nombre de spires:</label>
+        <div class="field has-addons has-addons-fullwidth">
+          <p class="control">
+            <input class="input numberOfCoils" type="number" placeholder="Nombre de spires:" step=
+            0.01 id="bodyLenghtNumberOfCoils">
+          </p>
+          <p class="control">
+            <a class="button is-static">spires</a>
+          </p>
+        </div>
+        <label class="label">Hauteur d'enroulement:</label>
+        <div class="field has-addons has-addons-fullwidth">
+          <p class="control">
+            <input class="input diamTolerance" type="number" placeholder="Hauteur d'enroulement" step=
+            0.01 id="bodyLenghtWindingStep">
+          </p>
+          <p class="control">
+            <a class="button is-static">mm</a>
+          </p>
+        </div>
+        <!--Buttons group-->
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-info" onclick="bodyLenghtCalculation()">Calculer</button>
+          </div>
+        </div>
+      </div>
+      <section class="hero is-success is-small" id="bodyLenghtHeroResult">
+        <div class="hero-body">
+          <p class="title" id="bodyLenghtResult">
           </p>
           <p class="subtitle" id="entireResult">
           </p>
