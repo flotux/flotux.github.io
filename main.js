@@ -21,9 +21,9 @@ function sensorFeedCalculation(clear = false) {
         }
 
         document.getElementById("sensorFeedResult").innerHTML = "Plage de palpage : " + sensorFeed + "mm";
-        document.getElementById("heroResult").style.visibility = "visible";
+        document.getElementById("sensorFeedHeroResult").style.visibility = "visible";
     } else {
-        document.getElementById("heroResult").style.visibility = "hidden";
+        document.getElementById("sensorFeedHeroResult").style.visibility = "hidden";
     }
 }
 
@@ -32,3 +32,17 @@ function clearInputs() {
 }
 
 
+function bodyLenghtCalculation() {
+
+    const SpringDiam = document.getElementById("bodyLenghtSpringDiam");
+    const numberOfCoils = document.getElementById("bodyLenghtNumberOfCoils");
+    const windingStep = document.getElementById("bodyLenghtWindingStep");
+
+    if (numberInputValidation(SpringDiam, numberOfCoils)) {
+        var windingLenght = Math.floor(SpringDiam.value * Math.PI * numberOfCoils.value);
+
+        document.getElementById("bodyLenghtResult").innerHTML = "Hauteur d'enroulement : " + windingLenght + "mm";
+        document.getElementById("bodyLenghtHeroResult").style.visibility = "visible";
+    }
+
+}
