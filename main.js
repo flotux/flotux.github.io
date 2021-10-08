@@ -3,7 +3,7 @@
 function sensorFeedCalculation(clear = false) {
 
     if (clear) {
-        document.getElementById("heroResult").style.visibility = "hidden";
+        document.getElementById("sensorFeedHeroResult").style.visibility = "hidden";
         document.getElementById("sensorSpringDiam").value = "";
         document.getElementById("sensorDiamTolerance").value = "";
         document.getElementById("sensorNumberOfCoils").value = "";
@@ -45,4 +45,12 @@ function bodyLenghtCalculation() {
         document.getElementById("bodyLenghtHeroResult").style.visibility = "visible";
     }
 
+}
+
+function bodyLenghtJointedCoils() {
+    if (document.getElementById("bodyLenghtJointed").checked) {
+        document.getElementById("bodyHeight").style.visibility = "hidden";
+    } else {
+        document.getElementById("bodyHeight").style.visibility = "visible";
+    }
 }

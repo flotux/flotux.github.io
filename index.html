@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IDressort</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="validity.js"></script>
     <script src="main.js"></script>
@@ -17,7 +16,7 @@
           IDressort
         </h1>
         <p class="subtitle">
-          Calculs et documentation sur le réglage des <strong>ressorts</strong>!
+          Calculs pour le réglage de <strong>ressorts</strong>.
         </p>
       </div>
     </section>
@@ -27,133 +26,137 @@
         <li><a class="has-text-light" href="#feedCalcul">Plage de palpage</a></li>
       </ul>
     </nav>
-    <!--sensor feed box -->
-    <div class="column" id="feedCalcul">
-      <div class="box">
-        <section class="section">
-            <h2 class="title">
-                Plage de palpage
-            </h2>
-            <p class="subtitle">
-                Calculer la plage de palpage d'un ressort.
+    <div class="columns">
+      <!--sensor feed box -->
+      <div class="column" id="feedCalcul">
+        <div class="box">
+          <section class="section">
+              <h2 class="title">
+                  Plage de palpage
+              </h2>
+              <p class="subtitle">
+                  Calculer la plage de palpage d'un ressort.
+              </p>
+          </section>
+
+          <!--Forms for calculation-->
+            <label class="label">Diamètre moyen du ressort:</label>
+            <div class="field has-addons has-addons-fullwidth">
+              <p class="control">
+                <input class="input springDiam" type="number" placeholder="Diamètre moyen du ressort" step=
+                0.01 id="sensorSpringDiam">
+              </p>
+              <p class="control">
+                <a class="button is-static">mm</a>
+              </p>
+            </div>
+            <label class="label">Tolérance ± au diamètre:</label>
+            <div class="field has-addons has-addons-fullwidth">
+              <p class="control">
+                <input class="input diamTolerance" type="number" placeholder="Tolérance ± au diamètre" step=
+                0.01 id="sensorDiamTolerance">
+              </p>
+              <p class="control">
+                <a class="button is-static">mm</a>
+              </p>
+            </div>
+            <label class="label">Nombre de spires:</label>
+            <div class="field has-addons has-addons-fullwidth">
+              <p class="control">
+                <input class="input numberOfCoils" type="number" placeholder="Nombre de spires:" step=
+                0.01 id="sensorNumberOfCoils">
+              </p>
+              <p class="control">
+                <a class="button is-static">spires</a>
+              </p>
+            </div>
+
+            <!--Buttons group-->
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-info" onclick="sensorFeedCalculation()">Calculer</button>
+              </div>
+            </div>
+        </div>
+        <section class="hero is-success is-small" id="sensorFeedHeroResult">
+          <div class="hero-body">
+            <p class="title" id="sensorFeedResult">
             </p>
+            <p class="subtitle" id="entireResult">
+            </p>
+          </div>
         </section>
-        
-        <!--Forms for calculation-->
+      </div>
+
+
+
+      <!--body Lenght box -->
+      <div class="column" id="feedCalcul">
+        <div class="box">
+          <section class="section">
+              <h2 class="title">
+                  Longueur d'enroulement
+              </h2>
+              <p class="subtitle">
+                  Calculer la longueur d'enroulement d'un ressort.
+              </p>
+          </section>
+          
+          <!--Forms for calculation-->
+          <div class="field">
+            <label class="switch">
+              <input type="checkbox" value="false" id="bodyLenghtJointed" onclick="bodyLenghtJointedCoils()">
+              <span class="check is-info"></span>
+              <span class="control-label">Spires jointives</span>
+            </label>
+          </div>
           <label class="label">Diamètre moyen du ressort:</label>
           <div class="field has-addons has-addons-fullwidth">
             <p class="control">
-              <input class="input springDiam" type="number" placeholder="Diamètre moyen du ressort" step=
-              0.01 id="sensorSpringDiam">
+              <input class="input wireDiam" type="number" placeholder="Diamètre moyen" step=
+              0.01 id="bodyLenghtSpringDiam">
             </p>
             <p class="control">
               <a class="button is-static">mm</a>
             </p>
           </div>
-          <label class="label">Tolérance ± au diamètre:</label>
-          <div class="field has-addons has-addons-fullwidth">
-            <p class="control">
-              <input class="input diamTolerance" type="number" placeholder="Tolérance ± au diamètre" step=
-              0.01 id="sensorDiamTolerance">
-            </p>
-            <p class="control">
-              <a class="button is-static">mm</a>
-            </p>
-          </div>
+          
           <label class="label">Nombre de spires:</label>
           <div class="field has-addons has-addons-fullwidth">
             <p class="control">
               <input class="input numberOfCoils" type="number" placeholder="Nombre de spires:" step=
-              0.01 id="sensorNumberOfCoils">
+              0.01 id="bodyLenghtNumberOfCoils">
             </p>
             <p class="control">
               <a class="button is-static">spires</a>
             </p>
           </div>
-
+          <label class="label">Hauteur d'enroulement:</label>
+          <div class="field has-addons has-addons-fullwidth" id="bodyHeight">
+            <p class="control">
+              <input class="input diamTolerance" type="number" placeholder="Hauteur d'enroulement" step=
+              0.01 id="bodyLenghtWindingStep">
+            </p>
+            <p class="control">
+              <a class="button is-static">mm</a>
+            </p>
+          </div>
           <!--Buttons group-->
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-info" onclick="sensorFeedCalculation()">Calculer</button>
+              <button class="button is-info" onclick="bodyLenghtCalculation()">Calculer</button>
             </div>
           </div>
-      </div>
-      <section class="hero is-success is-small" id="sensorFeedHeroResult">
-        <div class="hero-body">
-          <p class="title" id="sensorFeedResult">
-          </p>
-          <p class="subtitle" id="entireResult">
-          </p>
         </div>
-      </section>
-    </div>
-
-    <!--body Lenght box -->
-    <div class="column" id="feedCalcul">
-      <div class="box">
-        <section class="section">
-            <h2 class="title">
-                Longueur d'enroulement
-            </h2>
-            <p class="subtitle">
-                Calculer la longueur d'enroulement d'un ressort.
+        <section class="hero is-success is-small" id="bodyLenghtHeroResult">
+          <div class="hero-body">
+            <p class="title" id="bodyLenghtResult">
             </p>
-        </section>
-        
-        <!--Forms for calculation-->
-        <div class="field">
-          <label class="switch">
-            <input type="checkbox" value="false" id="bodyLenghtJointed">
-            <span class="check is-info"></span>
-            <span class="control-label">Spires jointives</span>
-          </label>
-        </div>
-        <label class="label">Diamètre moyen du ressort:</label>
-        <div class="field has-addons has-addons-fullwidth">
-          <p class="control">
-            <input class="input wireDiam" type="number" placeholder="Diamètre moyen" step=
-            0.01 id="bodyLenghtSpringDiam">
-          </p>
-          <p class="control">
-            <a class="button is-static">mm</a>
-          </p>
-        </div>
-        
-        <label class="label">Nombre de spires:</label>
-        <div class="field has-addons has-addons-fullwidth">
-          <p class="control">
-            <input class="input numberOfCoils" type="number" placeholder="Nombre de spires:" step=
-            0.01 id="bodyLenghtNumberOfCoils">
-          </p>
-          <p class="control">
-            <a class="button is-static">spires</a>
-          </p>
-        </div>
-        <label class="label">Hauteur d'enroulement:</label>
-        <div class="field has-addons has-addons-fullwidth">
-          <p class="control">
-            <input class="input diamTolerance" type="number" placeholder="Hauteur d'enroulement" step=
-            0.01 id="bodyLenghtWindingStep">
-          </p>
-          <p class="control">
-            <a class="button is-static">mm</a>
-          </p>
-        </div>
-        <!--Buttons group-->
-        <div class="field is-grouped">
-          <div class="control">
-            <button class="button is-info" onclick="bodyLenghtCalculation()">Calculer</button>
+            <p class="subtitle" id="entireResult">
+            </p>
           </div>
-        </div>
+        </section>
       </div>
-      <section class="hero is-success is-small" id="bodyLenghtHeroResult">
-        <div class="hero-body">
-          <p class="title" id="bodyLenghtResult">
-          </p>
-          <p class="subtitle" id="entireResult">
-          </p>
-        </div>
-      </section>
     </div>
 
     <div>
