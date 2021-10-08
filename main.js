@@ -28,6 +28,7 @@ function sensorFeedCalculation(clear = false) {
 }
 
 function clearInputs() {
+    console.log("test");
     sensorFeedCalculation(true);
 }
 
