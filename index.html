@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IDressort</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="node_modules/bulma-switch-control/css/main.min.css">
+
     <link rel="stylesheet" href="style.css">
     <script src="validity.js"></script>
     <script src="main.js"></script>
@@ -88,7 +90,7 @@
       </section>
     </div>
 
-    <!--Lenght body box -->
+    <!--body Lenght box -->
     <div class="column" id="feedCalcul">
       <div class="box">
         <section class="section">
@@ -101,6 +103,13 @@
         </section>
         
         <!--Forms for calculation-->
+        <div class="field">
+          <label class="switch">
+            <input type="checkbox" value="false" id="bodyLenghtJointed">
+            <span class="check is-info"></span>
+            <span class="control-label">Spires jointives</span>
+          </label>
+        </div>
         <label class="label">Diamètre moyen du ressort:</label>
         <div class="field has-addons has-addons-fullwidth">
           <p class="control">
