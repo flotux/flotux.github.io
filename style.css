@@ -9,11 +9,6 @@
     z-index: 2;
 }
 
-#windingStep {
-  visibility: hidden;
-  height: 0;
-}
-
 #sensorFeedHeroResult {
   visibility: hidden;
 }
@@ -28,3 +23,4 @@
   right:1%;
   z-index:9999;
 }
+
