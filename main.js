@@ -28,7 +28,6 @@ function sensorFeedCalculation(clear = false) {
 }
 
 function clearInputs() {
-    console.log("test");
     sensorFeedCalculation(true);
 }
 
@@ -47,7 +46,6 @@ function bodyLenghtCalculation() {
     }
 
 }
-<<<<<<< HEAD
 
 function bodyLenghtJointedCoils() {
     if (document.getElementById("bodyLenghtJointed").checked) {
@@ -56,5 +54,3 @@ function bodyLenghtJointedCoils() {
         document.getElementById("bodyHeight").style.visibility = "visible";
     }
 }
-=======
->>>>>>> 29a582a7e7e79bd9b0727cd21a2d29fb5c15d279
